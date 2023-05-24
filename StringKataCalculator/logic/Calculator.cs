@@ -8,8 +8,8 @@
         {
             if (data.Length == 0) return 0;
             if (data.Length == 1) return int.Parse(data);
-            int sum = (int) char.GetNumericValue(data[0]) + (int)char.GetNumericValue(data[2]);
-            return sum;
+
+            return data.Where(x=> char.IsNumber(x)).Sum(x=>(int)char.GetNumericValue(x));
 
         }
     }
