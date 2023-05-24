@@ -8,6 +8,8 @@ namespace StringKataCalculator.Tests
         [Theory]
         [InlineData("", 0)]
         [InlineData("1", 1)]
+        [InlineData("1,2", 3)]
+
 
 
         public void ShouldReturnZeroOfNullString(string _data,int expexted)
