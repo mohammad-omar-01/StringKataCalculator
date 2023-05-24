@@ -8,7 +8,7 @@ namespace StringKataCalculator.Tests
         [Theory]
         [InlineData("", 0)]
         [InlineData("1", 1)]
-        [InlineData("4,6", 3)]
+        [InlineData("4,6", 10)]
 
 
 
