@@ -4,19 +4,22 @@ namespace StringKataCalculator.Tests
 {
     public class CalculatorTester
     {
-        [Fact]
-        public void ShouldReturnSumOfNumbersAsString()
+        Calculator calculator = new Calculator();
+        [Theory]
+        [InlineData("", 0)]
+        [InlineData("1", 1)]
+
+
+        public void ShouldReturnZeroOfNullString(string _data,int expexted)
         {
-            //Arrange
-            string _data = "";
-            int  expected = 0;
+            
             //Act
-            Calculator calculator = new Calculator();
+           
 
             int actual= calculator.Add(_data);
 
             //Assert
-            Assert.Equal(expected, actual);
+            Assert.Equal(expexted, actual);
 
         }
     }
