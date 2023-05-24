@@ -11,6 +11,7 @@ namespace StringKataCalculator.Tests
             string _data = "";
             int  expected = 0;
             //Act
+
             int actual=Calculator.Add(_data);
 
             //Assert

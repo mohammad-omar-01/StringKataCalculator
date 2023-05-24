@@ -4,9 +4,10 @@
     {
        public Calculator() { }
 
-        public static int Add(object data)
+        public static int Add(string data)
         {
-            throw new NotImplementedException();
+            if (data == null) return 0;
+            return 0;
         }
     }
 }
