@@ -28,7 +28,7 @@ namespace StringKataCalculator.Tests
         [Theory]
         [InlineData("4,6,2", 12)]
         [InlineData("4,6,2,8", 20)]
-        [InlineData("1,2,3,4,5,6,7,8,9", 45)]
+        [InlineData("1,2,3,4,5,6,7,8,9,10", 55)]
 
 
         public void ShouldAddUknownNumbers(string _data, int expexted)

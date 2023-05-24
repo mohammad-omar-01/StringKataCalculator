@@ -8,8 +8,9 @@
         {
             if (data.Length == 0) return 0;
             if (data.Length == 1) return int.Parse(data);
+            var list=data.Split(',');
 
-            return data.Where(x=> char.IsNumber(x)).Sum(x=>(int)char.GetNumericValue(x));
+            return list.Sum(x=>int.Parse(x));
 
         }
     }
