@@ -8,8 +8,7 @@
         {
             if (data.Length == 0) return 0;
             if (data.Length == 1) return int.Parse(data);
-            var list=getNumbers(data);
-            
+            var list=getNumbers(data);           
             return list.Sum();
 
         }
