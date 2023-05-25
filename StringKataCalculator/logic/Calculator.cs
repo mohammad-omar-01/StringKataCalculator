@@ -12,7 +12,7 @@
             if (list.Any(x => x < 0)) {
                 throw new InvalidDataException($"negatives not allowed: {String.Join(",", (from n in list.Where(x=>x<0) select n.ToString()).ToArray())}");
             }
-            return list.Sum();
+            return list.Where(x=>x<=1000).Sum();
 
         }
         private List<int> getNumbers(string data) { 

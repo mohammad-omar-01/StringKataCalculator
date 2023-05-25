@@ -80,6 +80,20 @@ namespace StringKataCalculator.Tests
             //Assert
 
         }
+            [Theory]
+            [InlineData("4,6,2,1001", 12)]
+            [InlineData("4,6,2,8,2000", 20)]
+            [InlineData("1,2,3,4,5,6,7,8,9,10,101238", 55)]
 
-    }
+            public void ShouldNotAddLargeNumbers(string _data, int expexted)
+            {
+
+                int actual = calculator.Add(_data);
+
+                //Assert
+                Assert.Equal(expexted, actual); 
+
+            }
+
+        }
 }
