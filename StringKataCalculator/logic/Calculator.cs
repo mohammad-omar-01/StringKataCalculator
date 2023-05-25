@@ -16,9 +16,13 @@
         private List<int> getNumbers(string data) { 
         List<int> list = new List<int>();
             char[] delimiterChars = { ',', '\n'};
-            foreach (var item in data.Split(delimiterChars))
+            foreach (string item in data.Split(delimiterChars))
             {
-                list.Add(int.Parse(item));
+                int number;
+                bool isSuccessParsed = int.TryParse(item,out number);
+                if (isSuccessParsed) 
+                list.Add(number);
+                    
             }
         
         return list;
