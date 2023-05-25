@@ -1,5 +1,6 @@
 using StringKataCalculator.logic;
 using Xunit;
+using FluentAssertions;
 namespace StringKataCalculator.Tests
 {
     public class CalculatorTester
@@ -62,6 +63,21 @@ namespace StringKataCalculator.Tests
 
             //Assert
             Assert.Equal(expexted, actual);
+
+        }
+
+        [Theory]
+        [InlineData("1\n -1,0", "negatives not allowed: -1")]
+        [InlineData("1\n -2,-3", "negatives not allowed: -2,-3")]
+
+        public void ShouldThrowAnExecptionForNegativeNumbers(string _data, string expexted)
+        {
+
+            //Act
+            calculator.Invoking(y => y.Add(_data))
+                .Should().Throw<InvalidDataException>()
+                .WithMessage(expexted);
+            //Assert
 
         }
 
