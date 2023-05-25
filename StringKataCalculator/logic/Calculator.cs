@@ -8,7 +8,10 @@
         {
             if (data.Length == 0) return 0;
             if (data.Length == 1) return int.Parse(data);
-            var list=getNumbers(data);           
+            var list=getNumbers(data);
+            if (list.Any(x => x < 0)) {
+                throw new InvalidDataException($"negatives not allowed: {String.Join(",", (from n in list.Where(x=>x<0) select n.ToString()).ToArray())}");
+            }
             return list.Sum();
 
         }
